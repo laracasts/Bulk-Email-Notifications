@@ -1,0 +1,3 @@
+<?php
+
+Artisan::resolve('LessonPublishedNotifierCommand');
