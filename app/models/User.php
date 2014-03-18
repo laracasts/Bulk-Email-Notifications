@@ -19,14 +19,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $hidden = array('password');
 
-    /**
-     * @param $input
-     */
-    public function updateCredentials($input)
-    {
-        $this->notify = isset($input['notify']) ? 1 : 0;
-        $this->save();
-    }
+	/**
+	 * @param $input
+	 */
+	public function updateCredentials($input)
+	{
+		$this->notify = isset($input['notify']) ? 1 : 0;
+		$this->save();
+	}
 
 	/**
 	 * Get the unique identifier for the user.

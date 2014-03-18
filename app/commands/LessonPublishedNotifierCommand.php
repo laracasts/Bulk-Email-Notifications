@@ -20,23 +20,23 @@ class LessonPublishedNotifierCommand extends Command {
 	 */
 	protected $description = 'Notify all lesson subscribers by email.';
 
-    /**
-     * @var LessonPublished
-     */
-    private $lessonPublishedNotifier;
+	/**
+	 * @var LessonPublished
+	 */
+	private $lessonPublishedNotifier;
 
-    /**
-     * Create a new command instance.
-     *
-     * @param LessonPublished $lessonPublishedNotifier
-     * @return LessonPublishedNotifierCommand
-     */
+	/**
+	 * Create a new command instance.
+	 *
+	 * @param LessonPublished $lessonPublishedNotifier
+	 * @return LessonPublishedNotifierCommand
+	 */
 	public function __construct(LessonPublished $lessonPublishedNotifier)
 	{
 		parent::__construct();
 
-        $this->lessonPublishedNotifier = $lessonPublishedNotifier;
-    }
+		$this->lessonPublishedNotifier = $lessonPublishedNotifier;
+	}
 
 	/**
 	 * Notify all lesson subscribers
@@ -47,7 +47,7 @@ class LessonPublishedNotifierCommand extends Command {
 	{
 		$lesson = $this->getLesson();
 
-        $this->lessonPublishedNotifier->notify($lesson['title'], $lesson['body']);
+		$this->lessonPublishedNotifier->notify($lesson['title'], $lesson['body']);
 	}
 
 	/**
@@ -62,15 +62,15 @@ class LessonPublishedNotifierCommand extends Command {
 		];
 	}
 
-    /**
-     * @return array
-     */
-    private function getLesson()
-    {
-        return [
-            'title' => 'My Lesson Title',
-            'body'  => 'The body of my lesson'
-        ];
-    }
+	/**
+	 * @return array
+	 */
+	private function getLesson()
+	{
+		return [
+			'title' => 'My Lesson Title',
+			'body'  => 'The body of my lesson'
+		];
+	}
 
 }
